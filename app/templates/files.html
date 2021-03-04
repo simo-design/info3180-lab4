@@ -1,0 +1,19 @@
+  
+{% extends 'base.html' %}
+
+{% block main %}
+
+
+<div class="image_grid">
+    <img src="{{ url_for('get_image', filename='uploads/') }}" />
+    <ul>
+        {% for files in uploads %}
+        {% if not (files.lower().endswith(('.png', '.jpg', '.jpeg'))) %}
+            <li>{{ files }}</li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+
+     
+{% endblock %}
